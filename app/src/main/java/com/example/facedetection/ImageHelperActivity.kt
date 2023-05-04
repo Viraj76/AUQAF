@@ -193,41 +193,42 @@ abstract class ImageHelperActivity : AppCompatActivity() {
             }
         }
     }
-   protected open fun drawDetectionResult(bitmap: Bitmap, detectionResults: ArrayList<BoxWithText?>?): Bitmap {
+
+    protected open fun drawDetectionResult(
+        bitmap: Bitmap,
+        detectionResults: ArrayList<BoxWithText>
+    ): Bitmap? {
         val outputBitmap = bitmap.copy(Bitmap.Config.ARGB_8888, true)
         val canvas = Canvas(outputBitmap)
         val pen = Paint()
         pen.textAlign = Paint.Align.LEFT
-
         if (detectionResults != null) {
             for (box in detectionResults) {
                 // draw bounding box
                 pen.color = Color.RED
-                pen.strokeWidth = 8F
+                pen.strokeWidth = 8f
                 pen.style = Paint.Style.STROKE
-                box!!.rect?.let { canvas.drawRect(it, pen) }
+                canvas.drawRect(box!!.rect, pen)
                 val tagSize = Rect(0, 0, 0, 0)
+
                 // calculate the right font size
                 pen.style = Paint.Style.FILL_AND_STROKE
                 pen.color = Color.YELLOW
-                pen.strokeWidth = 2F
-                pen.textSize = 96F
-                box.text?.let { pen.getTextBounds(box.text, 0, it.length, tagSize) }
-                var fontSize = pen.textSize * (box.rect!!.width()) / tagSize.width()
+                pen.strokeWidth = 2f
+                pen.textSize = 96f
+                pen.getTextBounds(box.text, 0, box.text.length, tagSize)
+                val fontSize = pen.textSize * box.rect.width() / tagSize.width()
 
                 // adjust the font size so texts are inside the bounding box
                 if (fontSize < pen.textSize) {
                     pen.textSize = fontSize
                 }
-
-                var margin = (box.rect!!.width() - tagSize.width()) / 2.0F
-                if (margin < 0F) margin = 0F
-                box.text?.let {
-                    canvas.drawText(
-                        it, box.rect!!.left + margin,
-                        (box.rect!!.top + tagSize.height()).toFloat(), pen
-                    )
-                }
+                var margin = (box.rect.width() - tagSize.width()) / 2.0f
+                if (margin < 0f) margin = 0f
+                canvas.drawText(
+                    box.text, box.rect.left + margin,
+                    (box.rect.top + tagSize.height()).toFloat(), pen
+                )
             }
         }
         return outputBitmap
