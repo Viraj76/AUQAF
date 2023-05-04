@@ -216,7 +216,7 @@ abstract class ImageHelperActivity : AppCompatActivity() {
                 pen.color = Color.YELLOW
                 pen.strokeWidth = 2f
                 pen.textSize = 96f
-                pen.getTextBounds(box.text, 0, box.text.length, tagSize)
+//                pen.getTextBounds(box.text, 0, box.text.length, tagSize)
                 val fontSize = pen.textSize * box.rect.width() / tagSize.width()
 
                 // adjust the font size so texts are inside the bounding box
@@ -225,10 +225,10 @@ abstract class ImageHelperActivity : AppCompatActivity() {
                 }
                 var margin = (box.rect.width() - tagSize.width()) / 2.0f
                 if (margin < 0f) margin = 0f
-                canvas.drawText(
-                    box.text, box.rect.left + margin,
-                    (box.rect.top + tagSize.height()).toFloat(), pen
-                )
+//                canvas.drawText(
+//                    box.text, box.rect.left + margin,
+//                    (box.rect.top + tagSize.height()).toFloat(), pen
+//                )
             }
         }
         return outputBitmap
