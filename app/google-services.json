@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "246111003273",
+    "firebase_url": "https://aufaq-5b42c-default-rtdb.firebaseio.com",
+    "project_id": "aufaq-5b42c",
+    "storage_bucket": "aufaq-5b42c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:246111003273:android:e3ab38ca231bb6d0579c58",
+        "android_client_info": {
+          "package_name": "com.example.facedetection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "246111003273-n46cc7ku5ffhiqid5b278tphcc0smumo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuFZXypL8LpTfMxdKkgRVAGm--9JtLGl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "246111003273-n46cc7ku5ffhiqid5b278tphcc0smumo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
