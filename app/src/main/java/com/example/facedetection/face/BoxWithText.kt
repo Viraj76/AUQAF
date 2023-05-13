@@ -1,4 +1,4 @@
-package com.example.facedetection
+package com.example.facedetection.face
 
 import android.graphics.Rect
 import android.graphics.RectF

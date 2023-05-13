@@ -1,4 +1,4 @@
-package com.example.facedetection
+package com.example.facedetection.face
 
 import android.Manifest
 import android.content.Intent
@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
+import com.example.facedetection.R
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat

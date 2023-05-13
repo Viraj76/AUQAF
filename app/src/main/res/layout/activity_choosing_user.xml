@@ -4,6 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ChoosingUserActivity">
 
+    <ImageView
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:src="@drawable/iiitnr_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/_20sdp"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnProfessor"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:text="Professor Login"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_200sdp"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:background="@drawable/back_gradient"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnStudent"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:text="Student Login"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/white"
+        android:background="@drawable/back_gradient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnProfessor"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:padding="@dimen/_10sdp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>
