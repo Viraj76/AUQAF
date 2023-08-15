@@ -4,6 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FacultyActivity">
+    tools:context=".auth.ProfessorActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/profToolBar"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/blue"
+        app:menu="@menu/main_activity"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:src="@drawable/iiitnr_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profToolBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:layout_margin="@dimen/_20sdp"
+        />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCountStudents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Count Students"
+        android:textAllCaps="false"
+        android:background="@drawable/rect_back"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSeeAttendance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toBottomOf="@id/btnCountStudents"
+        android:text="See Attendance"
+        android:textAllCaps="false"
+        android:background="@drawable/rect_back"
+        android:padding="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_30sdp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

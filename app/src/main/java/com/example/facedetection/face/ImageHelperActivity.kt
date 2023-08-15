@@ -15,13 +15,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
 import com.example.facedetection.R
+import com.example.facedetection.databinding.ActivityImageHelperBinding
+import com.example.facedetection.auth.ProfessorActivity
+import com.example.facedetection.prof.AttendanceActivity
 import java.io.File
 import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.*
 import kotlin.collections.ArrayList
 
 abstract class ImageHelperActivity : AppCompatActivity() {
@@ -30,13 +30,27 @@ abstract class ImageHelperActivity : AppCompatActivity() {
     val PICK_IMAGE_ACTIVITY_REQUEST_CODE = 1064
     val REQUEST_READ_EXTERNAL_STORAGE = 2031
     var photoFile: File? = null
-
+    private lateinit var binding : ActivityImageHelperBinding
     private var inputImageView: ImageView? = null
     private var outputTextView: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_image_helper)
+        binding = ActivityImageHelperBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        binding.buttonTakePhoto.setOnClickListener {
+            val intent = Intent(this, AttendanceActivity::class.java)
+            intent.putExtra("numberOfStudents",binding.textView.text.toString())
+
+//            val sharedPref = getSharedPreferences("MyPrefs", MODE_PRIVATE)
+//            val editor = sharedPref.edit()
+//            editor.putString("user_preference",outputTextView.toString())
+//            editor.apply()
+
+            startActivity(intent)
+            finish()
+
+        }
 
         inputImageView = findViewById(R.id.imageView)
         outputTextView = findViewById(R.id.textView)
@@ -47,30 +61,30 @@ abstract class ImageHelperActivity : AppCompatActivity() {
             )
         }
     }
-    fun onTakeImage(view: View?) {
-        // create Intent to take a picture and return control to the calling application
-        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        // Create a File reference for future access
-        photoFile = getPhotoFileUri(SimpleDateFormat("yyyyMMdd_HHmmss").format(Date()) + ".jpg")
-
-        // wrap File object into a content provider
-        // required for API >= 24
-        // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
-        val fileProvider = FileProvider.getUriForFile(
-            this, "com.iago.fileprovider1",
-            photoFile!!
-        )
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider)
-
-        // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
-        // So as long as the result is not null, it's safe to use the intent.
-        if (intent.resolveActivity(packageManager) != null) {
-            // Start the image capture intent to take photo
-            startActivityForResult(
-                intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE
-            )
-        }
-    }
+//    fun onTakeImage(view: View?) {
+//        // create Intent to take a picture and return control to the calling application
+//        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+//        // Create a File reference for future access
+//        photoFile = getPhotoFileUri(SimpleDateFormat("yyyyMMdd_HHmmss").format(Date()) + ".jpg")
+//
+//        // wrap File object into a content provider
+//        // required for API >= 24
+//        // See https://guides.codepath.com/android/Sharing-Content-with-Intents#sharing-files-with-api-24-or-higher
+//        val fileProvider = FileProvider.getUriForFile(
+//            this, "com.iago.fileprovider1",
+//            photoFile!!
+//        )
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider)
+//
+//        // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
+//        // So as long as the result is not null, it's safe to use the intent.
+//        if (intent.resolveActivity(packageManager) != null) {
+//            // Start the image capture intent to take photo
+//            startActivityForResult(
+//                intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE
+//            )
+//        }
+//    }
     fun getPhotoFileUri(fileName: String): File? {
         // Get safe storage directory for photos
         // Use `getExternalFilesDir` on Context to access package-specific directories.

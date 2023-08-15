@@ -9,55 +9,65 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:layout_height="@dimen/_400sdp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/tvLL"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:minHeight="100dp"
-        android:text="Choose a photo using these buttons"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_200"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <Button
-            android:id="@+id/buttonPickPhoto"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        >
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pick Photo"
-            android:onClick="onPickImage"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/buttonTakePhoto"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="Number of Present Student-: "
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="__"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/black"
+           />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonPickPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Photo"
+        android:onClick="onPickImage"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLL"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+         />
 
         <Button
             android:id="@+id/buttonTakePhoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Take Photo"
+            android:text="Ok"
+            android:textAllCaps="false"
             android:onClick="onTakeImage"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="@dimen/_30sdp"
+           app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonPickPhoto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/buttonPickPhoto"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

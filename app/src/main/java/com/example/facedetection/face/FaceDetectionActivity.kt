@@ -34,7 +34,7 @@ public class FaceDetectionActivity : ImageHelperActivity() {
                 if (faces.isEmpty()) {
                     getOutputTextView()!!.text = "No faces detected"
                 } else {
-                    getOutputTextView()!!.text = String.format("%d faces detected", faces.size)
+                    getOutputTextView()!!.text = String.format("%d", faces.size)
                     val boxes= ArrayList<BoxWithText>()
                     for (face in faces) {
                         boxes.add(BoxWithText(face?.trackingId.toString(),face.boundingBox))

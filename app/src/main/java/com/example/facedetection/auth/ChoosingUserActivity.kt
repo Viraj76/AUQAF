@@ -1,10 +1,9 @@
-package com.example.facedetection
+package com.example.facedetection.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.facedetection.auth.ProfessorLogin
-import com.example.facedetection.auth.StudentLogin
+import com.example.facedetection.R
 import com.example.facedetection.databinding.ActivityChoosingUserBinding
 
 class ChoosingUserActivity : AppCompatActivity() {
@@ -13,7 +12,6 @@ class ChoosingUserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChoosingUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.apply {
             btnProfessor.setOnClickListener {
                 btnProfessor.setBackgroundResource(R.drawable.btn_back)

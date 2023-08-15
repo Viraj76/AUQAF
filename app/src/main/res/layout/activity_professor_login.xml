@@ -4,6 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfessorLogin">
+    tools:context=".auth.ProfessorLogin">
+    <ImageView
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:src="@drawable/iiitnr_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/_20sdp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Professor Login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvEmailLL"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_70sdp"
+        android:textColor="@color/blue"
+        android:textStyle="bold"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvEmailLL"
+        style="@style/LoginTextInputOuterFieldStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        app:boxStrokeColor="@color/blue"
+        android:layout_marginTop="@dimen/_350sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="clear_text"
+        android:textColorHint="@color/white"
+        app:endIconTint="@color/blue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etEmail"
+            style="@style/LoginTextInputInnerFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_fields"
+            android:hint="Enter your email"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etPasswordL"
+        style="@style/LoginTextInputOuterFieldStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        app:boxStrokeColor="@color/blue"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEmailLL"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            style="@style/LoginTextInputInnerFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter your password"
+            android:background="@drawable/login_fields"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:text="Login"
+        android:textAllCaps="false"
+        android:letterSpacing="0.1"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
+        app:cornerRadius="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etPasswordL"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

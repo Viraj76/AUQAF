@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -56,4 +57,14 @@ dependencies {
     //text dimension
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
     implementation 'com.intuit.ssp:ssp-android:1.1.0'
+    //firebase
+    implementation platform('com.google.firebase:firebase-bom:32.0.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-database-ktx'
+    //qrLibrary
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'com.google.mlkit:barcode-scanning:17.1.0'
+
 }

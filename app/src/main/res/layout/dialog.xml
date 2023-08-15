@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_250sdp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/markedCL">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dialogLayout"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/markedTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marked"
+
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_20ssp"
+            android:paddingTop="@dimen/_28sdp"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="@id/dialogLayout"/>
+        <TextView
+            android:id="@+id/markedDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Attendance Marked"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/_20ssp"
+            android:textColor="@color/blue"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:layout_marginStart="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@id/markedTitle"
+            app:layout_constraintBottom_toTopOf="@id/Done"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Done"
+            android:textStyle="bold"
+            android:text="Ok"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/blue"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/markedDesc"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    
+    <ImageView
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:id="@+id/doneImage"
+        android:src="@drawable/checkk"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/dialogLayout"
+        app:layout_constraintBottom_toTopOf="@id/dialogLayout"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

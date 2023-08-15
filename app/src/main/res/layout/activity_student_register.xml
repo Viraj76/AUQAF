@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".auth.StudentLogin">
+    tools:context=".auth.StudentRegister">
     <ImageView
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_100sdp"
@@ -16,14 +16,42 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Student Login"
+        android:text="Student Register"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tvEmailLL"
         android:textSize="@dimen/_20ssp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="@dimen/_90sdp"
+        android:layout_marginBottom="@dimen/_120sdp"
         android:textColor="@color/blue"
         android:textStyle="bold"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tvName"
+        style="@style/LoginTextInputOuterFieldStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        app:boxStrokeColor="@color/blue"
+        android:layout_marginTop="@dimen/_250sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:endIconMode="clear_text"
+        app:hintTextColor="@color/blue"
+        android:textColorHint="@color/white"
+        app:endIconTint="@color/blue"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etName"
+            style="@style/LoginTextInputInnerFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:background="@drawable/login_fields"
+            android:hint="Enter your name"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tvEmailLL"
         style="@style/LoginTextInputOuterFieldStyle"
@@ -59,8 +87,36 @@
         android:layout_marginHorizontal="@dimen/_16sdp"
         app:boxStrokeColor="@color/blue"
         android:textColorHint="@color/white"
-        app:hintTextColor="@color/blue"
         android:layout_marginTop="@dimen/_350sdp"
+        app:hintTextColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:endIconMode="password_toggle"
+        app:endIconTint="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etPassword"
+            style="@style/LoginTextInputInnerFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:hint="Enter your password"
+            android:background="@drawable/login_fields"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etConfirmPasswordL"
+        style="@style/LoginTextInputOuterFieldStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        app:boxStrokeColor="@color/blue"
+        android:textColorHint="@color/white"
+        app:hintTextColor="@color/blue"
+        android:layout_marginTop="@dimen/_400sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:endIconMode="password_toggle"
@@ -68,23 +124,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         >
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/etPassword"
-        style="@style/LoginTextInputInnerFieldStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:hint="Enter your password"
-        android:background="@drawable/login_fields"
-        android:inputType="textEmailAddress" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etConfirmPassword"
+            style="@style/LoginTextInputInnerFieldStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:hint="Confirm your password"
+            android:background="@drawable/login_fields"
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
-        android:layout_marginTop="@dimen/_400sdp"
-        android:text="Login"
-        app:layout_goneMarginTop="@dimen/_400sdp"
+        android:layout_marginTop="@dimen/_450sdp"
+        android:text="Register"
         android:textAllCaps="false"
         android:letterSpacing="0.1"
         android:textSize="@dimen/_15sdp"
@@ -95,11 +150,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_480sdp"
+        android:layout_marginTop="@dimen/_520sdp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,17 +164,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="0.01"
-            android:text="Don't have an account?"
+            android:text="Already have an account?"
             android:textColor="@color/lightBlue"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvSignUp"
+            android:id="@+id/tvSignIn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="0.01"
-            android:text="Sing Up"
+            android:text=" Sign In"
             android:textColor="@color/blue"
             android:textStyle="bold" />
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
